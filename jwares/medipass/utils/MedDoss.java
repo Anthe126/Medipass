@@ -5,14 +5,11 @@ import java.util.*;
 
 
 public class MedDoss {
-
     // Attributes
     protected int id;
-    // protected Consultation[] consultations;
     protected List<Consultation> consultations;
     // protected String[] examens;
     protected List<String> examens;
-    // protected Antecedent[] antecedents;
     protected List<Antecedent> antecedents;
 
     // Constructor

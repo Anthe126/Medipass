@@ -1,48 +1,46 @@
-package medipass.users;
+package medipass.utils;
 // --
 import java.time.*;
 
 
-public abstract class Utilisateur {
-
+public class Patient {
     // Attributes
     protected int id;
     protected String nom;
     protected String prenom;
     protected int age;
-    protected Sexe sexe;
+    protected String sexe;
     protected LocalDate date_naissance;
     protected long no_tel;
     protected String email;
     protected String addresse;
 
-    // Constructors
-    public Utilisateur() {
+    // Constructor
+    public Patient() {
         // init
     }
-    public Utilisateur(int idt,
+    public Patient(int idt,
         String name, String firstname,
-        int yo, Sexe sex, LocalDate dateN,
-        long phone_nb, String e_mail, String add_loc) 
+        int yo, String sex, LocalDate datePaN,
+        long phone_nb, String e_mail, String add_loc)
     {
         this.id = idt;
         this.nom = name;
         this.prenom = firstname;
         this.age = yo;
         this.sexe = sex;
-        this.date_naissance = dateN;
+        this.date_naissance = datePaN;
         this.no_tel = phone_nb;
         this.email = e_mail;
         this.addresse = add_loc;
     }
-
     
     // Id
     public void setId(int idt) {
         this.id = idt;
     }
     public int getId() { return id; }
-    
+
     // Nom
     public void setName(String name) {
         this.nom = name;
@@ -68,14 +66,14 @@ public abstract class Utilisateur {
     public int getAge() { return age; }
 
     // Sexe
-    public void setSexe(Sexe sex) {
+    public void setSexe(String sex) {
         this.sexe = sex;
     }
-    public Sexe getSexe() { return sexe; }
+    public String getSexe() { return sexe; }
 
     // Date
-    public void setDate(LocalDate dateN) {
-        this.date_naissance = dateN;
+    public void setDate(LocalDate datePaN) {
+        this.date_naissance = datePaN;
     }
     public LocalDate getDate() { return date_naissance; }
 
@@ -96,7 +94,7 @@ public abstract class Utilisateur {
         this.addresse = add_loc;
     }
     public String getAddress() { return addresse; }
-    
-    // Methods
+
+    // Methods : None
 }
 

@@ -1,11 +1,11 @@
-package medipass.medipass.mod;
+package medipass.mod;
 // 🥱
 
 import java.io.*;
 import java.util.*;
 
-public class Statistiques {
 
+public class Statistiques {
     // Attributes
     private int nb_patients;
     private List<int[]> nb_pro_by_ctg;

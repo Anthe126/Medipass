@@ -2,8 +2,6 @@
 package medipass.system;
 // --
 
-// MedDoss
-
 import java.io.*;
 //import java.nio.*;
 import java.nio.file.Files;
@@ -15,11 +13,11 @@ import java.util.zip.*;
 public class ArchivesManager {
     // Attributes
     // Dossier à Zipper
-    public String FolderToZip = "../DB/TempFileMedDoss";
+    public String FolderToZip = "../db/TempFileMedDoss";
     // fichierZip
-    public String ZipFile = "../DB/ArchivedMedDoss/Archives.zip";
+    public String ZipFile = "../db/ArchivedMedDoss/Archives.zip";
     // Dossier de destination
-    public String dossierDestination = "../DB/RestoredMedDoss";
+    public String dossierDestination = "../db/RestoredMedDoss";
 
     // Constructor
     public ArchivesManager() {

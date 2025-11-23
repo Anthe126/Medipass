@@ -1,13 +1,13 @@
 package medipass.utils;
 // --
+
 import java.time.*;
 
 
 public class Antecedent {
-
     // Attributes
     protected int id;
-    protected String niveau_de_gravite;    // enum
+    protected String niveau_de_gravite; // enum
     protected String description;
     protected LocalDate date;
 

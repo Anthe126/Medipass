@@ -1,13 +1,13 @@
 package medipass.users;
 // --
 import medipass.mod.Statistiques;
+import medipass.system.SystemDB;
 
 
 public class Administrateur extends Utilisateur {
 
     // Constructor
     public Administrateur() {
-        // init
         System.out.println(" System Admin actin' (partial SuperUser) \n");
     }
 
