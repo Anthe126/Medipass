@@ -32,13 +32,14 @@ public class Statistiques {
         String line;
         String fileName;
         // row -> index : 0 ; column -> element : e = []
+        // Optionnel
         int[] nb_medecin = new int[1];
         int[] nb_infirmier = new int[1];
         int[] nb_pharmacien = new int[1];
         int[] nb_conslt = new int[1];
         
         // nb_patients
-        fileName = "../DB/patients.csv";
+        fileName = "../db/patients.csv";
         try (BufferedReader patientsCSV = new BufferedReader(new FileReader(fileName))) {
             while ((line = patientsCSV.readLine()) != null) {
                 nb_patients += 1;
@@ -47,7 +48,7 @@ public class Statistiques {
         stats.get(0)[0] = nb_patients - 1;
         
         // nb_pro_by_ctg
-        fileName = "../DB/utilisateurs.csv";
+        fileName = "../db/utilisateurs.csv";
         try (BufferedReader usersCSV = new BufferedReader(new FileReader(fileName))) {
             int n = 0;
             while ((line = usersCSV.readLine()) != null) {
@@ -62,7 +63,7 @@ public class Statistiques {
                 else if (column.contains(ctg[2])) //"Pharmacien"
                     nb_pharmacien[0] += 1;
                 else 
-                    n += 1;
+                    n += 1;    // users total
             }
             stats.get(0)[4] = n - 1;
             //
@@ -70,13 +71,13 @@ public class Statistiques {
             this.nb_pro_by_ctg.set(1, nb_infirmier);
             this.nb_pro_by_ctg.set(2, nb_pharmacien);
         } catch (IOException e) { e.printStackTrace(); } // TODO: handle exception
-        stats.get(0)[1] = nb_medecin[0];
-        stats.get(0)[2] = nb_infirmier[0];
-        stats.get(0)[3] = nb_pharmacien[0];
+        stats.get(0)[1] = nb_pro_by_ctg.get(0)[0];
+        stats.get(0)[2] = nb_pro_by_ctg.get(1)[0];
+        stats.get(0)[3] = nb_pro_by_ctg.get(2)[0];
         
         // conslt_by_periods
-        // ex: 
-        fileName = "../DB/consultations.csv";
+        // ex: 1 an
+        fileName = "../db/consultations.csv";
         nb_conslt[0] = 23;
         stats.get(0)[5] = nb_conslt[0]; // 1 period
 
@@ -87,7 +88,7 @@ public class Statistiques {
         stats();
         System.out.println("____________________________\n"+
                             " *** Statistiques *** ");
-        String[] Champs = {"nb_patients", "nb_medecin", "nb_infirmier", "nb_pharmacien", "Nb_de_ProDeSante", "cons_by_periods"};  /*,,,,,*/
+        String[] Champs = {"nb_patients", "nb_medecin", "nb_infirmier", "nb_pharmacien", "Nb_de_ProDeSante", "cons_by_periods"};
         for (int i = 0; i < Champs.length; i++) {
             if ((i == 0) || (i == 1) || (i == 5)) 
                 System.out.println("**");
@@ -97,4 +98,5 @@ public class Statistiques {
     }
 
 }
+
 
