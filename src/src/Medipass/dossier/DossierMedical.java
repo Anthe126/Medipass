@@ -1,4 +1,4 @@
-package Medipass.dossier;
+package medipass.dossier;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +24,7 @@ public class DossierMedical {
             return;
         }
         consultations.add(c);
-        System.out.println("[OK] Consultation ajoutée.");
+        System.out.println("[OK] medipass.dossier.DossierMedical.Consultation ajoutée.");
     }
 
     // Ajouter un antécédent
@@ -68,4 +68,6 @@ public class DossierMedical {
         System.out.println("\nÉtat du dossier : " + (archive ? "ARCHIVÉ" : "ACTIF"));
         System.out.println("===== FIN =====\n");
     }
+
+
 }
